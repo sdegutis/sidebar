@@ -29,19 +29,17 @@ updateFeastDay()
 setInterval(updateFeastDay, 1000 * 60 * 60 * 5)
 
 
-function updateWeather() {
-  navigator.geolocation.getCurrentPosition(async pos => {
-    const { latitude, longitude } = pos.coords
-    const points = await fetch(`https://api.weather.gov/points/${latitude},${longitude}`).then(res => res.json())
-    const forecastNow = await fetch(points.properties.forecastHourly).then(res => res.json())
-    const forecastLater = await fetch(points.properties.forecast).then(res => res.json())
-    const now = forecastNow.properties.periods[0]
-    const later = forecastLater.properties.periods[0]
+async function updateWeather() {
+  const [latitude, longitude] = [42.31636, -88.44817]
+  const points = await fetch(`https://api.weather.gov/points/${latitude},${longitude}`).then(res => res.json())
+  const forecastNow = await fetch(points.properties.forecastHourly).then(res => res.json())
+  const forecastLater = await fetch(points.properties.forecast).then(res => res.json())
+  const now = forecastNow.properties.periods[0]
+  const later = forecastLater.properties.periods[0]
 
-    document.getElementById('temperature').innerText = `${now.temperature} ${now.temperatureUnit}°`
-    document.getElementById('weather-icon').src = later.icon
-    document.getElementById('weather-full').innerText = later.detailedForecast
-  })
+  document.getElementById('temperature').innerText = `${now.temperature} ${now.temperatureUnit}°`
+  document.getElementById('weather-icon').src = later.icon
+  document.getElementById('weather-full').innerText = later.detailedForecast
 }
 updateWeather()
 setInterval(updateWeather, 1000 * 60 * 5)
