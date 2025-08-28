@@ -1,18 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-  <title>Hello from Electron renderer!</title>
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" /> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://unpkg.com/romcal@1.3.0/dist/romcal.bundle.min.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href='./favicon.ico' />
 </head>
 
 <body>
-  <h1>Hello from Electron renderer!</h1>
-  <p>👋</p>
-  <p id="info"></p>
+  <div id="root">
+
+    <div id="top">
+      <div class="top2">
+        <iframe name="god"></iframe>
+      </div>
+      <div id="navlinks" class="box">
+        <a target="god" href='https://www.youtube.com/embed/live_stream?channel=UCTv8s3mfmdIIXNcw_5Pdv_w&autoplay=1&mute=1'>Adoration 1</a>
+        <a target="god" href='https://www.youtube.com/embed/live_stream?channel=UChmNZQg06jCB5xXHSAQQNpA&autoplay=1&mute=1'>Adoration 1</a>
+        <a target="god"
+          href='https://upload.wikimedia.org/wikipedia/commons/8/8a/Adoration_du_Saint_Sacrement_%C3%A0_l%27Eglise_du_Sacr%C3%A9-Coeur_de_Monaco.jpg'>Static
+          image</a>
+      </div>
+    </div>
+
+    <div id="bottom">
+
+      <div id="info">
+
+        <div id="timeinfo">
+          <div id="time"></div>
+          <div id="date">09/19/2021</div>
+          <div id="day">Saturday, September 19</div>
+        </div>
+
+        <div>
+          <div id="temprow">
+            <div id="temperature">87 Fº</div>
+            <img id="weather-icon" src="" />
+          </div>
+          <div id="weather-full">It's gonna rain or somethin.</div>
+        </div>
+
+        <div id="feastday">Saint of the Day</div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="./client.js"></script>
 </body>
-<script src="./renderer.js"></script>
 
 </html>
