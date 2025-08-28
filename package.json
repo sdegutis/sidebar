@@ -1,7 +1,7 @@
 {
   "name": "sidebar",
   "version": "1.0.0",
-  "description": "",
+  "description": "adoration",
   "main": "main.js",
   "scripts": {
     "start": "electron-forge start",
@@ -10,7 +10,7 @@
     "make": "electron-forge make"
   },
   "keywords": [],
-  "author": "",
+  "author": "me",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
